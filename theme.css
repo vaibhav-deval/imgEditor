@@ -1,11 +1,15 @@
 :root {
+  /* BGcolor */
   --bg-pri-color: rgb(17, 17, 17);
   --bg-sec-color: rgb(42, 42, 42);
+  /* Textcolor */
   --text-pri-color: rgb(227, 227, 227);
   --text-sec-color: rgb(42, 42, 42);
+  /* Statuscolor */
   --danger-color: rgb(190, 0, 0);
   --success-color: rgb(0, 165, 82);
 
+  /* spacing */
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 15px;
@@ -14,6 +18,16 @@
   --spacing-2xl: 30px;
   --spacing-3xl: 35px;
 
+  /* textSize */
+  --text-xs: 5px;
+  --text-sm: 10px;
+  --text-md: 15px;
+  --text-lg: 20px;
+  --text-xl: 25px;
+  --text-2xl: 30px;
+  --text-3xl: 35px;
+
+  /* border */
   --border-xs: 5px;
   --border-sm: 10px;
   --border-md: 15px;
@@ -22,6 +36,7 @@
   --border-2xl: 30px;
   --border-3xl: 35px;
 
+  /* radius */
   --radius-xs: 5px;
   --radius-sm: 10px;
   --radius-md: 15px;
