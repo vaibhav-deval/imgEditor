@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>imgEditor.io</title>
+    <link rel="icon" type="image/x-icon" href="./logo.svg" />
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
+      <section class="secLeft">
+        <div class="btnContainer">
+          <div>
+            <label for="selectImg">
+              Select Image
+              <input type="file" id="selectImg" hidden />
+            </label>
+          </div>
+          <button class="leftSecBtns" id="resetBtn">Reset</button>
+          <button class="leftSecBtns" id="downloadBtn">Download</button>
+        </div>
+        <div class="imgContainer"></div>
+      </section>
+      <section class="secRight"></section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
