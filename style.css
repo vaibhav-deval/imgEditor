@@ -16,31 +16,55 @@ main {
   height: 100%;
   display: flex;
   padding: var(--spacing-xl);
-  gap: var(--spacing-3xl);
+  gap: clamp(var(--spacing-xs), 2vw, var(--spacing-xl));
   color: var(--text-pri-color);
+  font-size: clamp(var(--text-xs), 2vw, var(--text-lg));
 }
 main section {
   background-color: var(--bg-sec-color);
   border: var(--border-xs) solid var(--success-color);
   border-radius: var(--radius-lg);
+  position: relative;
   overflow: hidden;
 }
+main section.secRight {
+  min-width: 20%;
+}
+
 main section.secLeft {
   width: 75%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: var(--spacing-md);
+}
+
+.secLeft .bottom {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secLeft .bottom .placeHolder {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 main .header {
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: var(--bg-pri-color);
   display: flex;
+  gap: clamp(var(--spacing-xs), 1vw, var(--spacing-xl));
+
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-xl);
   padding: var(--spacing-md);
   font-size: var(--text-md);
   font-weight: 600;
@@ -48,11 +72,13 @@ main .header {
 main section.secRight {
   width: 25%;
   height: 100%;
+  overflow: auto;
 }
 
 .imgContainer {
-  flex: 1;
-  width: 100%;
+  display: none;
+  max-width: 90%;
+  max-height: 80vh;
 }
 
 .leftSecBtns {
@@ -73,7 +99,7 @@ main section.secRight {
   padding-top: var(--spacing-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: clamp(var(--spacing-xs), 2vw, var(--spacing-lg));
 }
 .filter {
   display: flex;

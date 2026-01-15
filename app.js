@@ -14,7 +14,7 @@ const filters = {
   Exposure: {
     min: 0,
     max: 200,
-    value: 0,
+    value: 100,
     unit: "%",
   },
   Saturation: {
@@ -32,7 +32,7 @@ const filters = {
   Blur: {
     min: 0,
     max: 20,
-    value: 100,
+    value: 0,
     unit: "px",
   },
   Grayscale: {
@@ -44,7 +44,7 @@ const filters = {
   Sepia: {
     min: 0,
     max: 200,
-    value: 100,
+    value: 0,
     unit: "%",
   },
   Opacity: {
@@ -66,12 +66,14 @@ const filterContainer = document.querySelector(".filters");
 function createFilter(name, min, max, value, unit = "%") {
   const div = document.createElement("div");
   div.classList.add("filter");
+
   const input = document.createElement("input");
   input.type = "range";
   input.min = min;
   input.max = max;
   input.value = value;
   input.id = name;
+
   const p = document.createElement("p");
   p.innerHTML = name;
 
@@ -80,7 +82,27 @@ function createFilter(name, min, max, value, unit = "%") {
   return div;
 }
 
-Object.keys(filters).forEach((filter) => {
-  const { min, max, value, unit } = filter;
-  filterContainer.appendChild(createFilter(filter, min, max, value, unit));
+Object.keys(filters).forEach((key) => {
+  const { min, max, value, unit } = filters[key];
+  const filterElem = createFilter(key, min, max, value, unit);
+  filterContainer.appendChild(filterElem);
+});
+
+const placeHolder = document.querySelector(".placeHolder");
+const selectImg = document.querySelector("#selectImg");
+const imgContainer = document.querySelector(".imgContainer");
+const canvasCTX = imgContainer.getContext("2d");
+
+selectImg.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  const img = new Image();
+  img.src = URL.createObjectURL(file);
+  imgContainer.style.display="block"
+
+  img.onload = () => {
+    imgContainer.width = img.width;
+    imgContainer.height = img.height;
+    canvasCTX.drawImage(img, 0, 0);
+    placeHolder.style.display = "none";
+  };
 });
