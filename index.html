@@ -11,7 +11,7 @@
   <body>
     <main>
       <section class="secLeft">
-        <div class="btnContainer">
+        <div class="btnContainer header">
           <div>
             <label for="selectImg">
               Select Image
@@ -23,7 +23,15 @@
         </div>
         <div class="imgContainer"></div>
       </section>
-      <section class="secRight"></section>
+      <section class="secRight">
+        <div class="btnContainer header">Adjustments</div>
+        <div class="filters">
+          <div class="filter">
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="0" max="200" value="100" />
+          </div>
+        </div>
+      </section>
     </main>
     <script src="app.js"></script>
   </body>

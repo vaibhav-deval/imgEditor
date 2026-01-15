@@ -29,13 +29,13 @@
   --text-3xl: 35px;
 
   /* border */
-  --border-xs: 5px;
-  --border-sm: 10px;
-  --border-md: 15px;
-  --border-lg: 20px;
-  --border-xl: 25px;
-  --border-2xl: 30px;
-  --border-3xl: 35px;
+  --border-xs: 2px;
+  --border-sm: 5px;
+  --border-md: 10px;
+  --border-lg: 15px;
+  --border-xl: 20px;
+  --border-2xl: 25px;
+  --border-3xl: 30px;
 
   /* radius */
   --radius-xs: 5px;
