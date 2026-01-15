@@ -1,48 +1,77 @@
 :root {
-  /* BGcolor */
-  --bg-pri-color: rgb(11, 11, 11);
-  --bg-sec-color: rgb(17, 17, 17);
-  /* Textcolor */
-  --text-pri-color: rgb(227, 227, 227);
-  --text-sec-color: rgb(190, 0, 0);
-  --text-tri-color: rgb(0, 169, 107);
-  /* Statuscolor */
-  --danger-color: rgb(170, 34, 34);
-  --success-color: rgb(0, 136, 68);
+  /* =========================
+     BACKGROUND COLORS
+  ========================= */
+  --bg-pri-color: #0b0b0f;        /* app background */
+  --bg-sec-color: #14141c;        /* cards / panels */
+  --bg-glass-color: rgba(255, 255, 255, 0.04);
 
-  /* spacing */
-  --spacing-xs: 5px;
+  /* =========================
+     TEXT COLORS
+  ========================= */
+  --text-pri-color: #e6e6eb;      /* main text */
+  --text-sec-color: #ff4d4d;      /* danger / warning text */
+  --text-tri-color: #00d084;      /* success / accent text */
+  --text-muted-color: #9a9aa5;    /* muted labels */
+
+  /* =========================
+     STATUS COLORS
+  ========================= */
+  --danger-color: #d43c3c;
+  --success-color: #00b36b;
+  --accent-color: #6c7cff;        /* highlight / focus */
+
+  /* =========================
+     SPACING SYSTEM
+  ========================= */
+  --spacing-xs: 6px;
   --spacing-sm: 10px;
-  --spacing-md: 15px;
+  --spacing-md: 14px;
   --spacing-lg: 20px;
-  --spacing-xl: 25px;
-  --spacing-2xl: 30px;
-  --spacing-3xl: 35px;
+  --spacing-xl: 26px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 40px;
 
-  /* textSize */
-  --text-xs: 5px;
-  --text-sm: 10px;
-  --text-md: 15px;
-  --text-lg: 20px;
-  --text-xl: 25px;
-  --text-2xl: 30px;
-  --text-3xl: 35px;
+  /* =========================
+     FONT SIZES
+  ========================= */
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-md: 14px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
 
-  /* border */
-  --border-xs: 2px;
-  --border-sm: 5px;
-  --border-md: 10px;
-  --border-lg: 15px;
-  --border-xl: 20px;
-  --border-2xl: 25px;
-  --border-3xl: 30px;
+  /* =========================
+     BORDER WIDTH
+  ========================= */
+  --border-xs: 1px;
+  --border-sm: 2px;
+  --border-md: 3px;
+  --border-lg: 4px;
 
-  /* radius */
-  --radius-xs: 5px;
+  /* =========================
+     BORDER RADIUS
+  ========================= */
+  --radius-xs: 6px;
   --radius-sm: 10px;
-  --radius-md: 15px;
-  --radius-lg: 20px;
-  --radius-xl: 25px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
   --radius-2xl: 30px;
-  --radius-3xl: 35px;
+
+  /* =========================
+     SHADOWS
+  ========================= */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+  --transition-fast: 0.15s ease;
+  --transition-md: 0.25s ease;
+  --transition-slow: 0.4s ease;
 }

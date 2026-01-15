@@ -1,123 +1,265 @@
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   width: 100%;
   height: 100%;
   background: var(--bg-pri-color);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-pri-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
 }
+
+/* =========================
+   MAIN LAYOUT
+========================= */
 main {
   width: 100%;
   height: 100%;
   display: flex;
-  padding: var(--spacing-xl);
-  gap: clamp(var(--spacing-xs), 2vw, var(--spacing-xl));
-  color: var(--text-pri-color);
-  font-size: clamp(var(--text-xs), 2vw, var(--text-lg));
-}
-main section {
-  background-color: var(--bg-sec-color);
-  border: var(--border-xs) solid var(--success-color);
-  border-radius: var(--radius-lg);
-  position: relative;
-  overflow: hidden;
-}
-main section.secRight {
-  min-width: 20%;
+  gap: clamp(var(--spacing-sm), 2vw, var(--spacing-xl));
+  padding: clamp(var(--spacing-sm), 2vw, var(--spacing-xl));
+  font-size: var(--text-md);
 }
 
-main section.secLeft {
+/* =========================
+   COMMON SECTION STYLE
+========================= */
+main section {
+  background: var(--bg-sec-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================
+   LEFT SECTION
+========================= */
+.secLeft {
   width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-pri-color);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.leftSecBtns {
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-pri-color);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+#resetBtn {
+  background: var(--danger-color);
+}
+
+#downloadBtn {
+  background: var(--success-color);
+}
+
+.leftSecBtns:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.leftSecBtns:active {
+  transform: scale(0.96);
+}
+
+/* SELECT IMAGE BUTTON */
+.placeholder {
+  background: var(--text-pri-color);
+  color: var(--bg-sec-color);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.placeholder:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   IMAGE AREA
+========================= */
+.secLeft .bottom {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secLeft .bottom label {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.secLeft .bottom {
-  flex-grow: 1;
-  width: 100%;
-  display: flex;
+  gap: var(--spacing-sm);
   align-items: center;
   justify-content: center;
+  font-size: var(--text-xl);
+  color: var(--text-muted-color);
+  cursor: pointer;
+  transition: var(--transition-md);
 }
 
-.secLeft .bottom .placeHolder {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main .header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: var(--bg-pri-color);
-  display: flex;
-  gap: clamp(var(--spacing-xs), 1vw, var(--spacing-xl));
-
-  justify-content: center;
-  align-items: center;
-  padding: var(--spacing-md);
-  font-size: var(--text-md);
-  font-weight: 600;
-}
-main section.secRight {
-  width: 25%;
-  height: 100%;
-  overflow: auto;
+.secLeft .bottom label:hover {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .imgContainer {
   display: none;
   max-width: 90%;
   max-height: 80vh;
+  animation: fadeIn 0.4s ease forwards;
 }
 
-.leftSecBtns {
-  padding: var(--spacing-xs) var(--spacing-lg);
-  outline: 0;
-  border: 0;
-  border-radius: var(--radius-xs);
-  color: var(--text-pri-color);
+/* =========================
+   RIGHT SECTION
+========================= */
+.secRight {
+  width: 25%;
+  min-width: 260px;
+  overflow-y: auto;
+  padding-bottom: var(--spacing-md);
 }
 
-#resetBtn {
-  background-color: var(--danger-color);
+.secRight::-webkit-scrollbar {
+  width: 0;
 }
-#downloadBtn {
-  background-color: var(--success-color);
-}
+
+/* =========================
+   FILTERS
+========================= */
 .filters {
-  padding-top: var(--spacing-sm);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  gap: clamp(var(--spacing-xs), 2vw, var(--spacing-lg));
+  gap: var(--spacing-lg);
 }
+
 .filter {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
-  padding-inline: var(--spacing-lg);
+  gap: var(--spacing-sm);
 }
 
+.filter label {
+  font-size: var(--text-sm);
+  color: var(--text-muted-color);
+}
+
+/* SLIDER */
 .filter input {
   appearance: none;
 }
 
 .filter input::-webkit-slider-runnable-track {
-  background: var(--success-color);
   height: 2px;
-  display: flex;
+  background: var(--accent-color);
 }
 
 .filter input::-webkit-slider-thumb {
-  margin-top: -6.5px;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--success-color);
+  border-radius: 50%;
+  margin-top: -7px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(0, 208, 132, 0.2);
+}
+
+/* =========================
+   PRESETS
+========================= */
+.Presets {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.Presets button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--bg-pri-color);
+  color: var(--text-pri-color);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.Presets button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.Presets button:active {
+  transform: scale(0.95);
+}
+
+.Presets button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.Presets button:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

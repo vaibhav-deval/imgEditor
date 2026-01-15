@@ -13,38 +13,50 @@
     />
   </head>
   <body>
-    <main>
+    <main role="main">
       <section class="secLeft">
-        <div class="btnContainer header">
+        <header class="btnContainer header">
           <div class="placeholder">
-            <label for="selectImg">
-              <i class="ri-image-2-line"></i> Select Image
-              <input type="file" id="selectImg" hidden />
+            <label for="selectImg" class="uploadBtn">
+              <i class="ri-image-2-line"></i>
+              <span>Select Image</span>
             </label>
+            <input type="file" id="selectImg" accept="image/*" hidden />
           </div>
-          <button class="leftSecBtns" id="resetBtn">Reset</button>
-          <button class="leftSecBtns" id="downloadBtn">Download</button>
-        </div>
+
+          <button type="button" class="leftSecBtns" id="resetBtn">Reset</button>
+          <button type="button" class="leftSecBtns" id="downloadBtn">
+            Download
+          </button>
+        </header>
+
         <div class="bottom">
-          <div class="placeHolder">
-            <label for="selectImg">
-              <i class="ri-image-2-line imgIcon"></i>
-              <h1>Select Image</h1>
-            </label>
+          <label for="selectImg" class="selectImg">
+            <i class="ri-image-2-line imgIcon"></i>
+            <h1>Select Image</h1>
+          </label>
+
+          <div class="canvasWrapper">
+            <canvas class="imgContainer"></canvas>
           </div>
-          <canvas class="imgContainer"> </canvas>
         </div>
       </section>
+
       <section class="secRight">
-        <div class="btnContainer header">Adjustments</div>
-        <div class="filters">
-          <div class="filter">
-            <p>Brightness</p>
-            <input type="range" id="brightness" min="0" max="200" value="100" />
-          </div>
+        <header class="btnContainer header">Editor</header>
+
+        <div class="panel">
+          <h3>Adjustments</h3>
+          <div class="filters"></div>
+        </div>
+
+        <div class="panel">
+          <h3>Presets</h3>
+          <div class="Presets"></div>
         </div>
       </section>
     </main>
+
     <script src="app.js"></script>
   </body>
 </html>
