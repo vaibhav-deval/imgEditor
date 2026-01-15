@@ -1,6 +1,4 @@
-const { createElement } = require("react");
-
-const filter = {
+const filters = {
   Brightness: {
     min: 0,
     max: 200,
@@ -63,6 +61,8 @@ const filter = {
   },
 };
 
+const filterContainer = document.querySelector(".filters");
+
 function createFilter(name, min, max, value, unit = "%") {
   const div = document.createElement("div");
   div.classList.add("filter");
@@ -73,9 +73,14 @@ function createFilter(name, min, max, value, unit = "%") {
   input.value = value;
   input.id = name;
   const p = document.createElement("p");
-  p.textContent = name;
+  p.innerHTML = name;
 
   div.appendChild(p);
   div.appendChild(input);
   return div;
 }
+
+Object.keys(filters).forEach((filter) => {
+  const { min, max, value, unit } = filter;
+  filterContainer.appendChild(createFilter(filter, min, max, value, unit));
+});

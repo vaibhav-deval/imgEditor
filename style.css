@@ -73,7 +73,7 @@ main section.secRight {
   padding-top: var(--spacing-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
 }
 .filter {
   display: flex;
@@ -87,12 +87,11 @@ main section.secRight {
 }
 
 .filter input::-webkit-slider-runnable-track {
-  background: #000;
+  background: var(--success-color);
   height: 2px;
   display: flex;
 }
 
 .filter input::-webkit-slider-thumb {
-  color: aqua;
   margin-top: -6.5px;
 }
